@@ -1,0 +1,120 @@
+h1{
+    font-family: fontHead;
+    text-align: center;
+    font-style: italic;
+    color: rgb(44, 123, 17);
+    font-size: 60px;
+    font-weight: 900;
+    margin-right: 50px;
+}
+
+
+#main{
+    display: grid;
+    grid-row-gap: 50px;
+    padding: 10px;
+    width: 900px;
+    margin-left: 300px;
+  }
+
+
+  #userInput{
+    background-color: rgba(205, 255, 194, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding-bottom: 100px;
+      padding-top: 80px;
+
+
+
+  }
+  #userInput>button{
+      margin-left: 30px;
+      font-size: 30px;
+      width: 100px;
+  }
+  #appImage,#review{
+    background-color: rgba(214, 255, 205, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  #no{
+    margin-left: 50px;
+  }
+
+  #yes,#no{
+      font-size: 25px;
+      width: 80px;
+  }
+
+
+#reviewText{
+    font-size: 18px;
+    text-align: left;
+}
+
+
+
+
+#textbox{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color:rgba(255, 255, 255, 0.2);;
+    outline: none;
+    height: 20px;
+    width: 78%;
+    margin-left: 25px;
+    font-size: 22px;
+
+}
+
+::placeholder{
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+}
+
+button{
+    color: rgb(33, 196, 66);
+    border-color:rgb(33, 196, 66);
+    transition: color 0.3s ease-in-out;
+    font-size: 20px;
+    outline: none;
+    border-radius: 8px;
+
+}
+
+button:hover{
+    color: rgb(220, 0, 0);
+}
+
+button:before{
+    height: 0;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    background-color:rgb(33, 196, 66);
+    transition: width, height, top, left, 0.3s ease-in-out;
+}
+
+button:hover:before{
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+
+
+
+.checked {
+    color: orange;
+  }
+  #star{
+      font-size: 20px;
+  }

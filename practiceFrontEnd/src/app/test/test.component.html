@@ -1,0 +1,46 @@
+<!-- <h1>Welcome to ReachHigh!</h1>
+<h3>A place where you know your demand</h3>
+Enter your URL <input type="text" #url>
+
+<button (click)="getApp(url)">Get</button>
+ <button (click)="getReview(url)"> Review</button>
+
+<h1 *ngIf="notNull">{{app.title}}</h1>
+<img src={{app.icon}} *ngIf="notNull">
+
+<div *ngIf="notNullOne">
+    <ol>
+        <li *ngFor="let data of reviews.results.data">{{data.text}}</li>
+    </ol>
+</div> -->
+<h1> Welcome to ReachHigh </h1>
+<div id="main">
+
+    <div id="userInput">
+        <!-- User input grid/ link input-->
+        <input id="textbox" type="text" placeholder=" Link Text......" #url> <button (click)="getApp(url)"> GET </button>
+    </div>
+
+    <div id="appImage" *ngIf="notNull">
+        <!--Application Image/Icon -->
+        <img src="{{app.icon}}" alt="AppIcon" width="30%" max-height="100%">
+        <h4 id="appName">{{app.title}}</h4>
+
+        <div id="confirmation">
+            <!--User confirmation-->
+            <p> Is this your app? </p>
+            <button id="yes" (click)="getReview(url)">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <div id="UserReview" *ngIf="notNullOne">
+        <div id="review" *ngFor="let data of reviews.results.data">
+            <p id="reviewText">{{data.text}}</p>
+            <div id="star">
+                <span class="fa fa-star checked" *ngFor='let in of counter(data.score)'></span>
+                <span class="fa fa-star"*ngFor='let in of counter(5-data.score)'></span>
+            </div>
+        </div>
+    </div>
+</div>
