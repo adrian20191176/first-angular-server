@@ -25,7 +25,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors());
 
-
 // This middleware informs the express application to serve our compiled React files
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
     console.log("Hi");

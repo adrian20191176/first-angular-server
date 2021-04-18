@@ -1,22 +1,26 @@
-import React, { Component } from "react";
-import "./App.css";
-import Confirmation from "./components/Confirmation";
-import Home from "./components/Home";
-import Results from "./components/Results";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import React, { Component } from 'react';
+import './App.css';
+import axios from 'axios'
+
 class App extends Component {
+  state = {
+    response: {}
+  };
+  
+  componentDidMount() {
+    axios.get('api/v1/say-something').then((res) => {
+      const response = res.data;
+      this.setState({response});
+    });
+  }
+
   render() {
     return (
-      <Router>
-        {/* <NavBar /> */}
-        <div className="App">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/confirmation" component={Confirmation} />
-            <Route path="/Results" component={Results} />
-          </Switch>
-        </div>
-      </Router>
+      <div className="App">
+        <h1>Hello from the frontend!</h1>
+        <h1>{this.state.response.body}</h1>
+      </div>
     );
   }
 }
