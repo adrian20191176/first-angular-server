@@ -1,9 +1,9 @@
-
 // Import dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const router = require('./lib');
 
 // Create a new express application named 'app'
 const app = express();
@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cors());
+
+app.use('/api/', router);
 
 // This middleware informs the express application to serve our compiled React files
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
